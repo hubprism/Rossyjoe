@@ -32,6 +32,41 @@
 
          <!-- Favicon -->
     <link href="img/fav.png" rel="icon">
+
+
+
+
+    <script>
+$(document).ready(function(){
+$('.client-carousel').owlCarousel({
+loop:true,
+margin:20,
+autoplay:true,
+autoplayTimeout:2000,
+autoplayHoverPause:true,
+responsive:{
+0:{ items:2 },
+600:{ items:3 },
+1000:{ items:5 }
+}
+});
+});
+
+.client-carousel .item {
+    text-align: center;
+}
+
+.client-carousel img {
+    width: 120px;         /* adjustable */
+    height: auto;
+    display: inline-block;
+}
+
+.owl-carousel .owl-item {
+    display: flex;
+    justify-content: center;
+    a
+</script>
     </head>
 
     <body>
@@ -253,23 +288,6 @@
 <div class="item"><img src="img/client6.png" class="img-fluid client-logo" alt="Client 6"><p class="fw-bold mt-2">Client Six</p></div>
 </div>
 
-
-<script>
-$(document).ready(function(){
-$('.client-carousel').owlCarousel({
-loop:true,
-margin:20,
-autoplay:true,
-autoplayTimeout:2000,
-autoplayHoverPause:true,
-responsive:{
-0:{ items:2 },
-600:{ items:3 },
-1000:{ items:5 }
-}
-});
-});
-</script>
 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
 <img src="img/zenith.png" class="img-fluid client-logo" alt="Client Logo 2">
 <p class="mt-2 fw-bold">Client Two</p>
@@ -398,6 +416,19 @@ responsive:{
 
     <!-- Template Javascript -->
     <script src="js/main.js"></script>
+
+    $('.client-carousel').owlCarousel({
+    loop:true,
+    margin:20,
+    autoplay:true,
+    autoplayTimeout:2000,
+    autoplayHoverPause:true,
+    responsive:{
+        0:{ items:2 },
+        600:{ items:3 },
+        1000:{ items:5 }
+    }
+});
     </body>
 
 </html>
