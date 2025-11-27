@@ -34,7 +34,37 @@
     <link href="img/fav.png" rel="icon">
 
 
+<style>
+/* Center logo items and force horizontal alignment */
+.client-carousel .item{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+}
 
+/* Logo sizing */
+.client-carousel img{
+    max-width:120px;   /* adjust to enlarge/reduce logos */
+    height:auto;
+    object-fit:contain;
+    display:block;
+    margin:auto;
+}
+
+/* Force carousel alignment into a single horizontal line */
+.owl-carousel .owl-stage{
+    display:flex;
+    align-items:center;
+}
+
+.owl-carousel .owl-item{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+</style>
 
     </head>
 
@@ -256,23 +286,7 @@
 <div class="item"><img src="img/client6.png" class="img-fluid client-logo" alt="Client 6"><p class="fw-bold mt-2">Client Six</p></div>
 </div>
 
-<script>
-$(document).ready(function(){
-$('.client-carousel').owlCarousel({
-loop:true,
-margin:20,
-autoplay:true,
-autoplayTimeout:2000,
-smartSpeed:900,
-autoplayHoverPause:true,
-responsive:{
-0:{ items:2 },
-600:{ items:3 },
-1000:{ items:5 }
-}
-});
-});
-</script>
+
 
 <div class="col-6 col-sm-4 col-md-3 col-lg-2">
 <img src="img/zenith.png" class="img-fluid client-logo" alt="Client 2">
