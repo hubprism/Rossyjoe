@@ -66,6 +66,7 @@
 }
 </style>
 
+
     </head>
 
     <body>
@@ -438,7 +439,60 @@
     
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="js/main.js">
+
+       
+// Ensure Owl Carousel assets are present; if not, load from CDN then initialize
+(function(){
+function loadCSS(href){
+if(!document.querySelector('link[href="'+href+'"]')){
+var l = document.createElement('link'); l.rel='stylesheet'; l.href=href; document.head.appendChild(l);
+}
+}
+function loadJS(src, cb){
+if(document.querySelector('script[src="'+src+'"]')){ cb(); return; }
+var s = document.createElement('script'); s.src = src; s.onload = cb; document.body.appendChild(s);
+}
+
+
+// CDN URLs (fallbacks)
+var owlCss = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css';
+var owlTheme = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css';
+var owlJs = 'https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js';
+
+
+// Load CSS if missing
+loadCSS(owlCss);
+loadCSS(owlTheme);
+
+
+// Init function
+function initCarousel(){
+if(typeof $.fn !== 'undefined' && typeof $.fn.owlCarousel === 'function'){
+$('.client-carousel').not('.owl-loaded').owlCarousel({
+loop:true,
+margin:20,
+autoplay:true,
+autoplayTimeout:2500,
+smartSpeed:900,
+autoplayHoverPause:true,
+responsive:{
+0:{ items:2 },
+600:{ items:3 },
+1000:{ items:5 }
+}
+});
+} else {
+console.warn('Owl Carousel not available');
+}
+}
+
+
+// If owl exists, init. Otherwise load it then init.
+if(typeof $.fn !== 'undefined' && typeof $.fn.owlCarousel === 'function'){
+initCarousel();
+</script>
+
 
     </body>
 
